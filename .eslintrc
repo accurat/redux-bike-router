@@ -1,0 +1,17 @@
+{
+  "parser": "babel-eslint",
+  "plugins": [
+    "standard",
+  ],
+  "extends": [
+    "standard",
+  ],
+  "rules": {
+    "comma-dangle": [1, "always-multiline"],
+    "space-before-function-paren": [1, {"anonymous": "always", "named": "never"}],
+    "key-spacing": [2, {"beforeColon": false, "afterColon": true, "mode": "minimum"}],
+    "object-curly-spacing": [2, "always"],
+    "block-spacing": [2, "always"],
+    "padded-blocks": [2, {"blocks": "never", "switches": "never", "classes": "never"}],
+  },
+}
