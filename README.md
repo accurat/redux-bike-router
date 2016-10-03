@@ -11,7 +11,7 @@ modify the state from the URL.
 
 ```js
 import { createStore, applyMiddleware } from 'redux'
-import createRoutingMiddleware from 'react-bike-router'
+import createRoutingMiddleware from 'redux-bike-router'
 
 const urlConfig = {
   taskId: {

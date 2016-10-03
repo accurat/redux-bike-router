@@ -2,8 +2,8 @@ import React from 'react'
 import { createStore, applyMiddleware } from 'redux'
 import { Provider, connect } from 'react-redux'
 
-// import createRoutingMiddleware from 'react-bike-router'
-import createRoutingMiddleware from 'babel?presets[]=es2015&presets[]=stage-0!../../index'
+// import createRoutingMiddleware from 'redux-bike-router'
+import createRoutingMiddleware from '../../index'
 
 import logo from './logo.svg'
 import './App.css'
