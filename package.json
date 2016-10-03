@@ -1,8 +1,8 @@
 {
-  "name": "redux-femto-router",
+  "name": "redux-bike-router",
   "version": "0.0.1",
   "description": "A very tiny router implementation for Redux, reactive to state changes.",
-  "repo": "https://github.com/caesarsol/redux-femto-router",
+  "repo": "https://github.com/caesarsol/redux-bike-router",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

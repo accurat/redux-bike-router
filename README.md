@@ -1,5 +1,5 @@
-redux-femto-router
-==================
+redux-bike-router
+=================
 
 ## ⚠️💥 EXPERIMENTAL 💥⚠️
 
@@ -11,7 +11,7 @@ modify the state from the URL.
 
 ```js
 import { createStore, applyMiddleware } from 'redux'
-import createRoutingMiddleware from 'react-femto-router'
+import createRoutingMiddleware from 'react-bike-router'
 
 const urlConfig = {
   taskId: {

@@ -2,7 +2,7 @@ import React from 'react'
 import { createStore, applyMiddleware } from 'redux'
 import { Provider, connect } from 'react-redux'
 
-// import createRoutingMiddleware from 'react-femto-router'
+// import createRoutingMiddleware from 'react-bike-router'
 import createRoutingMiddleware from 'babel?presets[]=es2015&presets[]=stage-0!../../index'
 
 import logo from './logo.svg'
@@ -112,7 +112,7 @@ function Container({ title, children }) {
     <div className="App">
       <div className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <h3>Welcome to <em>Femto</em> Router!</h3>
+        <h3>Welcome to <em>Bike</em> Router!</h3>
       </div>
       <div className="App-intro">
         {children}

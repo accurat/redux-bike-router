@@ -1,7 +1,7 @@
 import { createHashHistory as createHistory } from 'history'
 import { mapToObject, mapToArray, flattened, log } from 'babel?presets[]=es2015&presets[]=stage-0!./utils'
 
-const BYPASS_FLAG = '__bypassFemtoRoutingMiddleware'
+const BYPASS_FLAG = '__bypassBikeRoutingMiddleware'
 
 function makeActionBypasser(action) {
   return { ...action, [BYPASS_FLAG]: true }
