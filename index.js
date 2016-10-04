@@ -1,5 +1,5 @@
 import { createHashHistory as createHistory } from 'history'
-import { mapToObject, mapToArray, flattened, log } from 'babel?presets[]=es2015&presets[]=stage-0!./utils'
+import { mapToObject, mapToArray, flattened } from './utils'
 
 const BYPASS_FLAG = '__bypassBikeRoutingMiddleware'
 

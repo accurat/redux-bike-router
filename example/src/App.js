@@ -2,8 +2,7 @@ import React from 'react'
 import { createStore, applyMiddleware } from 'redux'
 import { Provider, connect } from 'react-redux'
 
-// import createRoutingMiddleware from 'redux-bike-router'
-import createRoutingMiddleware from '../../index'
+import createRoutingMiddleware from 'redux-bike-router'
 
 import logo from './logo.svg'
 import './App.css'
