@@ -4,7 +4,9 @@ import { mapToObject, mapToArray, flattened } from './utils'
 const BYPASS_FLAG = '__bypassBikeRoutingMiddleware'
 
 function makeActionBypasser(action) {
-  return { ...action, [BYPASS_FLAG]: true }
+  // Not risky to mutate this Action object since it is not re-used.
+  action[BYPASS_FLAG] = true
+  return action
 }
 
 function isActionBypasser(action) {
