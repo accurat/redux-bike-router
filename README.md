@@ -11,7 +11,7 @@ modify the state from the URL.
 
 ```js
 import { createStore, applyMiddleware } from 'redux'
-import createRoutingMiddleware from 'redux-bike-router'
+import createRoutingMiddleware, { applyUrlSelectors } from 'redux-bike-router'
 
 const urlConfig = {
   taskId: {
@@ -35,7 +35,7 @@ function urlToSegments(url) {
 }
 
 export function pageSelector(state) {
-  const { taskId } = state
+  const { taskId } = applyUrlSelectors(state, urlConfig)
   if (taskId === null) return 'home'
   if (taskId !== null) return 'task'
 }

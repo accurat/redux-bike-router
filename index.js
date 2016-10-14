@@ -19,8 +19,12 @@ function makeUrl(urlSegments = null) {
   return `/${urlSegments.join('/')}/`
 }
 
-function applyUrlSelectors(state, urlConfig) {
+export function applyUrlSelectors(state, urlConfig) {
   return urlConfig::mapToObject(cfg => cfg.selector(state))
+}
+
+export function getUrlSelectors(urlConfig) {
+  return urlConfig::mapToObject(cfg => cfg.selector)
 }
 
 function urlSegmentsToActions(urlSegments, urlConfig) {
@@ -92,4 +96,3 @@ export default function createRoutingMiddleware(config) {
     }
   }
 }
-
