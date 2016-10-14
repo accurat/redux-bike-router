@@ -72,6 +72,8 @@ export default function createRoutingMiddleware(config) {
 
     dispatchUrlActionsOnLocation(history.location)
 
+    let oldPage = null
+
     return next => action => {
       if (isActionBypasser(action)) return next(action)
 
@@ -85,12 +87,14 @@ export default function createRoutingMiddleware(config) {
       if (!changedAnything) return result
 
       const nextUrl = makeUrl(subStateToUrl(applyUrlSelectors(nextState, urlConfig)))
-      const prevPage = pageSelector(prevState)
+      const prevPage = oldPage || pageSelector(prevState)
       const nextPage = pageSelector(nextState)
 
       prevPage === nextPage
         ? replaceUrl(nextUrl)
         : pushUrl(nextUrl)
+
+      oldPage = nextPage
 
       return result
     }
