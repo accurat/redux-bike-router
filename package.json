@@ -2,23 +2,39 @@
   "name": "redux-bike-router",
   "version": "0.0.1",
   "description": "A very tiny router implementation for Redux, reactive to state changes.",
-  "repo": "https://github.com/caesarsol/redux-bike-router",
-  "main": "index.js",
+  "repository": "https://github.com/accurat/redux-bike-router",
+  "license": "GPL-3.0",
+  "authors": [
+    "Cesare Soldini <cesare.soldini@gmail.com> (https://github.com/caesarsol)",
+    "Luca Falasco <falasco.luca@gmail.com> (https://github.com/lucafalasco)",
+    "Paolo Corti <paolocorti87@gmail.com> (https://github.com/paolocorti)",
+    "Marco Vettorello <marco.vettorello@accurat.it> (https://github.com/markov00)"
+  ],
+  "main": "es5/index.js",
+  "module": "es5/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint .",
+    "build": "babel *.js --out-dir es5/",
+    "prepublish": "npm run build"
   },
   "keywords": [
     "redux",
     "router",
-    "react"
+    "react",
+    "react-router",
+    "redux-router"
   ],
-  "author": "caesarsol <cesare.soldini@gmail.com>",
-  "license": "GPL-3.0",
   "dependencies": {
     "history": "^4.3.0"
   },
+  "peerDependencies": {
+    "react": "^0.14.0 || ^15.0.0-0",
+    "redux": "^2.0.0 || ^3.0.0"
+  },
   "devDependencies": {
+    "babel-cli": "^6.18.0",
     "babel-core": "^6.17.0",
+    "babel-eslint": "^7.1.0",
     "babel-loader": "^6.2.5",
     "babel-preset-es2015": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
