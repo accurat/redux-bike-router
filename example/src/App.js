@@ -13,10 +13,10 @@ const initialState = {
   taskId: null,
   subtaskId: null,
   tasks: [
-    { id: 0, text: 'Hello World',      parent: null, done: true  },
+    { id: 0, text: 'Hello World', parent: null, done: true },
     { id: 1, text: 'Go to the market', parent: null, done: false },
-    { id: 2, text: 'Buy bread',        parent: 1,    done: true  },
-    { id: 3, text: 'Buy milk',         parent: 1,    done: false },
+    { id: 2, text: 'Buy bread', parent: 1, done: true },
+    { id: 3, text: 'Buy milk', parent: 1, done: false },
   ],
 }
 
@@ -82,8 +82,11 @@ const logMiddleware = store => next => action => {
 }
 const store = createStore(reducer, applyMiddleware(logMiddleware, routingMiddleware))
 
-//// App & Components ////
+/**
+ * App & Components
+ */
 
+// eslint-disable-next-line react/prop-types
 function Container({ title, children }) {
   return (
     <div className="App">
@@ -100,7 +103,7 @@ function Container({ title, children }) {
 
 const provideMainTasks = connect(
   (state) => ({ tasks: state.tasks.filter(task => task.parent === null) }),
-  (dispatch) => ({ onSelectTask: (taskId) => dispatch({type: 'CHANGE_TASK', payload: taskId}) }),
+  (dispatch) => ({ onSelectTask: (taskId) => dispatch({ type: 'CHANGE_TASK', payload: taskId }) }),
 )
 const Home = provideMainTasks(({ tasks = [], onSelectTask }) => {
   return (
@@ -108,7 +111,7 @@ const Home = provideMainTasks(({ tasks = [], onSelectTask }) => {
       <h2>Task list:</h2>
       {tasks.map(task =>
         <div key={task.id}
-             style={{cursor: 'pointer', color: task.done ? 'grey' : 'black'}}
+             style={{ cursor: 'pointer', color: task.done ? 'grey' : 'black' }}
              onClick={() => onSelectTask(task.id)}
         >
           {task.text}
@@ -124,7 +127,7 @@ const provideSubtasks = connect(
     subtasks: state.tasks.filter(task => task.parent === state.taskId),
   }),
   (dispatch) => ({
-    onSelectSubtask: (taskId) => { dispatch({type: 'CHANGE_SUBTASK', payload: taskId}) }
+    onSelectSubtask: (taskId) => { dispatch({ type: 'CHANGE_SUBTASK', payload: taskId }) },
   }),
 )
 const Task = provideSubtasks(({ task, subtasks, onSelectSubtask }) => {
@@ -139,7 +142,7 @@ const Task = provideSubtasks(({ task, subtasks, onSelectSubtask }) => {
       </h3>
       {subtasks.map(task =>
         <div key={task.id}
-             style={{cursor: 'pointer', color: task.done ? 'grey' : 'black'}}
+             style={{ cursor: 'pointer', textDecoration: task.done ? 'none' : 'line-through', color: task.done ? 'grey' : 'black' }}
              onClick={() => onSelectSubtask(task.id)}
         >
           {task.text}
@@ -164,7 +167,6 @@ const SubTask = provideTaskSubtask(({ task, subtask, onSelectSubtask }) => {
       </h2>
       <h3>
         <span>Subtask: </span>
-        {/*subtask ? subtask.text : null*/}
         {subtask.text}
       </h3>
     </Container>

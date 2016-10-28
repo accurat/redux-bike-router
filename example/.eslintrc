@@ -6,7 +6,7 @@
   ],
   "extends": [
     "standard",
-    "react"
+    "plugin:react/recommended"
   ],
   "rules": {
     "comma-dangle": [1, "always-multiline"],
