@@ -1,6 +1,14 @@
 redux-bike-router
 =================
 
+[![npm version](https://badge.fury.io/js/redux-bike-router.svg)](https://badge.fury.io/js/redux-bike-router)
+[![dependencies](https://david-dm.org/accurat/redux-bike-router/status.svg)](https://david-dm.org/accurat/redux-bike-router)
+[![devDependencies](https://david-dm.org/accurat/redux-bike-router/dev-status.svg)](https://david-dm.org/accurat/redux-bike-router?type=dev)
+[![peerDependencies](https://david-dm.org/accurat/redux-bike-router/peer-status.svg)](https://david-dm.org/accurat/redux-bike-router?type=peer)
+<!-- [![build status](https://travis-ci.org/accurat/redux-bike-router.svg?branch=master)](https://travis-ci.org/accurat/redux-bike-router) -->
+
+[![NPM](https://nodei.co/npm/redux-bike-router.png)](https://npmjs.org/package/redux-bike-router)
+
 ## ⚠️💥 EXPERIMENTAL 💥⚠️
 
 A tiny router implementation designed specifically for Redux, as simple as a :bike:!
