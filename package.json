@@ -1,17 +1,16 @@
 {
   "name": "redux-bike-router",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A very tiny router implementation for Redux, reactive to state changes.",
   "repository": "https://github.com/accurat/redux-bike-router",
   "license": "GPL-3.0",
-  "authors": [
+  "contributors": [
     "Cesare Soldini <cesare.soldini@gmail.com> (https://github.com/caesarsol)",
     "Luca Falasco <falasco.luca@gmail.com> (https://github.com/lucafalasco)",
     "Paolo Corti <paolocorti87@gmail.com> (https://github.com/paolocorti)",
     "Marco Vettorello <marco.vettorello@accurat.it> (https://github.com/markov00)"
   ],
   "main": "es5/index.js",
-  "module": "es5/index.js",
   "scripts": {
     "lint": "eslint .",
     "build": "babel *.js --out-dir es5/",
