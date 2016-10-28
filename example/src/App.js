@@ -13,19 +13,19 @@ const initialState = {
   taskId: null,
   subtaskId: null,
   tasks: [
-    {id: 0, text: 'Hello World',      parent: null, done: true },
-    {id: 1, text: 'Go to the market', parent: null, done: false},
-    {id: 2, text: 'Buy bread',        parent: 1,    done: true },
-    {id: 3, text: 'Buy milk',         parent: 1,    done: false},
+    { id: 0, text: 'Hello World',      parent: null, done: true  },
+    { id: 1, text: 'Go to the market', parent: null, done: false },
+    { id: 2, text: 'Buy bread',        parent: 1,    done: true  },
+    { id: 3, text: 'Buy milk',         parent: 1,    done: false },
   ],
 }
 
 function reducer(state = initialState, action) {
   switch (action.type) {
     case 'CHANGE_TASK':
-      return {...state, taskId: action.payload}
+      return Object.assign({}, state, { taskId: action.payload })
     case 'CHANGE_SUBTASK':
-      return {...state, subtaskId: action.payload}
+      return Object.assign({}, state, { subtaskId: action.payload })
     default:
       return state
   }
@@ -83,28 +83,6 @@ const logMiddleware = store => next => action => {
 const store = createStore(reducer, applyMiddleware(logMiddleware, routingMiddleware))
 
 //// App & Components ////
-
-const providePage = connect((state) => ({ page: pageSelector(state) }))
-const Page = providePage(({ page }) => {
-  switch (page) {
-    case 'home':
-      return <Home />
-    case 'task':
-      return <Task />
-    case 'subtask':
-      return <SubTask />
-    default:
-      return <h1>Not Found</h1>
-  }
-})
-
-export default function App() {
-  return (
-    <Provider store={store}>
-      <Page />
-    </Provider>
-  )
-}
 
 function Container({ title, children }) {
   return (
@@ -192,3 +170,25 @@ const SubTask = provideTaskSubtask(({ task, subtask, onSelectSubtask }) => {
     </Container>
   )
 })
+
+const providePage = connect((state) => ({ page: pageSelector(state) }))
+const Page = providePage(({ page }) => {
+  switch (page) {
+    case 'home':
+      return <Home />
+    case 'task':
+      return <Task />
+    case 'subtask':
+      return <SubTask />
+    default:
+      return <h1>Not Found</h1>
+  }
+})
+
+export default function App() {
+  return (
+    <Provider store={store}>
+      <Page />
+    </Provider>
+  )
+}
