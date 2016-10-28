@@ -1,6 +1,5 @@
 # TODO
 
-0. ~~Solve import problems for stage-0 babel.~~
 0. Write documentation.
 0. Improve example.
 0. Publish on **npm**.
